@@ -90,7 +90,7 @@ Gemini CLI and many others read it natively. Claude Code uses `.claude/skills`.
 Keep a clone somewhere stable (the installer symlinks into it, so updates are a `git pull`):
 
 ```bash
-git clone https://github.com/pprice/beadpowers.git ~/.beadpowers
+git clone https://github.com/Angra974/beadpowers.git ~/.beadpowers
 ~/.beadpowers/scripts/install.sh
 ```
 
@@ -126,7 +126,7 @@ If you use Claude Code, the plugin marketplace remains the simplest install, and
 the `/beadpowers:brainstorm` command and the session hook:
 
 ```text
-/plugin marketplace add pprice/beadpowers
+/plugin marketplace add Angra974/beadpowers
 /plugin install beadpowers@beadpowers-dev
 ```
 
@@ -136,7 +136,7 @@ used together: plugin skills are namespaced (`beadpowers:brainstorming`), script
 ### Manual install
 
 ```bash
-git clone https://github.com/pprice/beadpowers.git ~/.beadpowers
+git clone https://github.com/Angra974/beadpowers.git ~/.beadpowers
 
 for dir in ~/.agents/skills ~/.claude/skills ~/.cursor/skills ~/.gemini/skills ~/.config/opencode/skills; do
   mkdir -p "$dir"
@@ -233,7 +233,7 @@ Run `bd init` first, then install the skills so the managed `AGENTS.md` block is
 beads has written its own:
 
 ```bash
-git clone https://github.com/pprice/beadpowers.git ~/.beadpowers
+git clone https://github.com/Angra974/beadpowers.git ~/.beadpowers
 ~/.beadpowers/scripts/install.sh              # global, every detected agent
 cd ~/code/my-project
 ~/.beadpowers/scripts/install.sh --project    # optional, committed with the repo
@@ -319,3 +319,6 @@ project.
 ## Licence
 
 MIT License - see [LICENSE](LICENSE) for details.
+
+Ce dépôt est une évolution indépendante de `beadpowers`. L'historique git et le fichier
+`LICENSE` conservent la filiation et les attributions d'origine.

@@ -49,7 +49,7 @@ If it does not, read the `SKILL.md` file and follow it literally.
 ## Installing beadpowers
 
 ```bash
-git clone https://github.com/pprice/beadpowers.git ~/.beadpowers
+git clone https://github.com/Angra974/beadpowers.git ~/.beadpowers
 ~/.beadpowers/scripts/install.sh            # this user, every detected agent
 ~/.beadpowers/scripts/install.sh --project  # current repository, committed with it
 ```

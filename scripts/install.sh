@@ -50,7 +50,7 @@ Project targets:
   <project>/AGENTS.md          Managed beadpowers block (created or appended)
 
 Examples:
-  git clone https://github.com/pprice/beadpowers.git ~/.beadpowers
+  git clone https://github.com/Angra974/beadpowers.git ~/.beadpowers
   ~/.beadpowers/scripts/install.sh
   cd ~/code/my-app && ~/.beadpowers/scripts/install.sh --project
 EOF
@@ -142,7 +142,7 @@ append_agents_block() {
 <!-- beadpowers:start -->
 ## Beadpowers
 
-This project uses [beadpowers](https://github.com/pprice/beadpowers) skills for bead-based workflows.
+This project uses [beadpowers](https://github.com/Angra974/beadpowers) skills for bead-based workflows.
 
 - Before any orchestrated or tracked work, first load `orchestrator-directive` from
   `.agents/skills/orchestrator-directive/SKILL.md`: decision ladder (active work -> `bd memories dec:`

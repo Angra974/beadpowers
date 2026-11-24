@@ -1,17 +1,1 @@
-{
-  "name": "beadpowers",
-  "description": "Skills for beads-powered workflows",
-  "version": "0.2.0",
-  "author": {
-    "name": "Phil Price",
-    "email": "phil@pprice.me"
-  },
-  "homepage": "https://github.com/pprice/beadpowers",
-  "repository": "https://github.com/pprice/beadpowers",
-  "license": "MIT",
-  "keywords": [
-    "skills",
-    "beads",
-    "brainstorming"
-  ]
-}
+{"name":"beadpowers","description":"Skills for beads-powered workflows","version":"0.3.0","author":{"name":"Thierry Parlier","email":"thierryparlier97440@gmail.com"},"homepage":"https://github.com/Angra974/beadpowers","repository":"https://github.com/Angra974/beadpowers","license":"MIT","keywords":["skills","beads","brainstorming"]}
