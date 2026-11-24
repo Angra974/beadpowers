@@ -43,7 +43,7 @@ Start by understanding the current project context, then ask questions one at a 
 
 **Implementation (if continuing):**
 - Ask: "Ready to set up for implementation?"
-- Use beadpowers:create-beads to create epic/tasks with the design
+- Use the `create-beads` skill (Claude Code plugin: `beadpowers:create-beads`) to create epic/tasks with the design
 
 ## Key Principles
 
