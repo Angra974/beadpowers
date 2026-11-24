@@ -126,19 +126,8 @@ project_instruction_files() {
   printf '%s\n' "${PROJECT_DIR}/AGENTS.md" "${PROJECT_DIR}/CLAUDE.md"
 }
 
-append_agents_block() {
-  local file
-  for file in $(project_instruction_files); do
-    if [[ -f "$file" ]] && grep -qF -- "$BLOCK_START" "$file"; then
-      printf "  ok   %s (beadpowers block already present)\n" "$file"
-      continue
-    fi
-
-    if [[ -f "$file" && -s "$file" ]]; then
-      printf "\n" >> "$file"
-    fi
-
-    cat >> "$file" <<'BLOCK'
+write_agents_block() {
+  cat <<'BLOCK'
 <!-- beadpowers:start -->
 ## Beadpowers
 
@@ -161,7 +150,35 @@ This project uses [beadpowers](https://github.com/Angra974/beadpowers) skills fo
 - Do not write plan documents to `docs/plans/`; track work with `bd create`, `bd ready`, `bd close`.
 <!-- beadpowers:end -->
 BLOCK
+}
 
+append_agents_block() {
+  local file tmp
+  for file in $(project_instruction_files); do
+    mkdir -p -- "$(dirname "$file")"
+
+    if [[ -f "$file" ]] && grep -qF -- "$BLOCK_START" "$file"; then
+      # Bloc deja present : on le regenere (contenu peut etre obsolete).
+      tmp="$(mktemp)"
+      awk -v start="$BLOCK_START" -v end="$BLOCK_END" '
+        $0 == start { skip = 1; next }
+        $0 == end   { skip = 0; next }
+        !skip       { print }
+      ' "$file" > "$tmp"
+      if [[ -s "$tmp" ]]; then
+        printf "\n" >> "$tmp"
+      fi
+      write_agents_block >> "$tmp"
+      mv -- "$tmp" "$file"
+      printf "  upd  %s (beadpowers block refreshed)\n" "$file"
+      continue
+    fi
+
+    if [[ -f "$file" && -s "$file" ]]; then
+      printf "\n" >> "$file"
+    fi
+
+    write_agents_block >> "$file"
     printf "  add  %s (beadpowers block)\n" "$file"
   done
 }
